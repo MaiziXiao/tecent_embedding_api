@@ -1,0 +1,26 @@
+[tool.poetry]
+name = "embedding_api"
+version = "0.1.0"
+description = ""
+authors = ["Xiao, Linchen <linchen.xiao@metronom.com>"]
+
+[tool.poetry.dependencies]
+python = "^3.8"
+gensim = "^3.8.3"
+google-cloud-firestore = "^1.9.0"
+google-cloud-core = "^1.4.1"
+grpcio = "^1.31.0"
+google-cloud-storage = "^1.31.0"
+fastapi = "^0.61.1"
+uvicorn = "^0.11.8"
+faiss-cpu = "^1.6.3"
+google-cloud-secret-manager = "^1.0.0"
+
+[tool.poetry.dev-dependencies]
+pytest = "^5.2"
+jupyter = "^1.0.0"
+notebook = "^6.1.3"
+
+[build-system]
+requires = ["poetry>=0.12"]
+build-backend = "poetry.masonry.api"
