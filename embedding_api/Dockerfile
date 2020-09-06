@@ -7,12 +7,10 @@ RUN apt-get update \
 COPY ./app /app
 COPY poetry.lock pyproject.toml /app/
 
-WORKDIR /app
-
 # Project initialization:
 RUN poetry config virtualenvs.create false \
     && poetry install --no-dev
 
-
+WORKDIR /app
 
 CMD ["uvicorn", "app.main:app", "--host", "0.0.0.0", "--port", "80"]
