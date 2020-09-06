@@ -37,7 +37,7 @@ class CustomUnpickler(pickle.Unpickler):
 
 app = FastAPI()
 
-# storage_client = storage.Client.from_service_account_json('/home/linchenxiao/gcp_keys/playground-linchen-2774599fb4bc.json')
+# storage_client = storage.Client.from_service_account_json('/Users/linchenxiao/gcp_keys/playground-linchen-2774599fb4bc.json')
 storage_client = storage.Client()
 bucket = storage_client.get_bucket("playground-linchen")
 
