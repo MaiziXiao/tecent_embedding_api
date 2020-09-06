@@ -4,13 +4,12 @@ RUN apt-get update \
     && apt-get -y install python3 python3-dev python3-venv \
     && pip3 install poetry
 
-COPY ./app /app
-COPY poetry.lock pyproject.toml /app/
+COPY poetry.lock pyproject.toml /
 
 # Project initialization:
 RUN poetry config virtualenvs.create false \
     && poetry install --no-dev
 
-WORKDIR /app
+COPY ./app /app
 
 CMD ["uvicorn", "app.main:app", "--host", "0.0.0.0", "--port", "80"]
